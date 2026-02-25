@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $1 == "--help" || -z $1 ]]; then
+    echo "Usage: gcheckout <branch>"
+    echo "Checks out the specified branch."
+    exit 1
+fi
+
+git checkout "$1"
+if [[ $? -ne 0 ]]; then
+    echo "Error: git checkout failed."
+    exit 1
+fi
+

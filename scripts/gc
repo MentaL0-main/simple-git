@@ -1,14 +1,13 @@
 #!/bin/bash
 
 if [[ $1 == "--help" || -z $1 ]]; then
-    echo "Usage: gcheckout <branch>"
-    echo "Checks out the specified branch."
+    echo "Usage: gc \"Commit message\""
     exit 1
 fi
 
-git checkout "$1"
+git commit -S -m "$1"
 if [[ $? -ne 0 ]]; then
-    echo "Error: git checkout failed."
+    echo "Error: git commit failed."
     exit 1
 fi
 
