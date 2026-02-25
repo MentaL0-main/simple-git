@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $1 == "--help" ]]; then
+    echo "Usage: glog"
+    echo "Shows the commit logs."
+    exit 0
+fi
+
+git log
+if [[ $? -ne 0 ]]; then
+    echo "Error: git log failed."
+    exit 1
+fi
+
