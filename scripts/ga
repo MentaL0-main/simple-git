@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $1 == "--help" ]]; then
+    echo "Usage: ga"
+    echo "Runs git add ."
+    exit 0
+fi
+
+git add .
+if [[ $? -ne 0 ]]; then
+    echo "Error: git add failed."
+    exit 1
+fi
+
