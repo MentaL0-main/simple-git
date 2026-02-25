@@ -2,8 +2,6 @@
 
 This pack of scripts, created for simple use git.
 
-![screenshot](screenshot)
-
 ## Scripts
 ```python
 ga - git add
@@ -38,4 +36,5 @@ Reboot terminal and use
 
 ## Lincense
 This project under the **MIT License**.
+
 
