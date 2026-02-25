@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $1 == "--help" || -z $1 ]]; then
+    echo "Usage: gmerge <branch>"
+    echo "Merges the specified branch into the current branch."
+    exit 1
+fi
+
+git merge "$1"
+if [[ $? -ne 0 ]]; then
+    echo "Error: git merge failed."
+    exit 1
+fi
+
