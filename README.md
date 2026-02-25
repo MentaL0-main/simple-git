@@ -23,9 +23,14 @@ gchc - git checkout
 For linux you can:
 
 ```bash
+# Clone repo
 git clone https://github.com/MentaL0-main/simple-git.git
 cd simple-git
 
+# Make to executable
+chmod +x ./scripts/**
+
+# Copy in /usr/bin for use anywhere
 sudo cp ./scripts/* /usr/bin
 ```
 
@@ -33,3 +38,4 @@ Reboot terminal and use
 
 ## Lincense
 This project under the **MIT License**.
+
