@@ -1,0 +1,30 @@
+#!/bin/bash
+
+function usage() {
+    echo "Usage: gacp \"Commit comment\""
+    echo "Combines git add, commit, and push commands."
+    exit 1
+}
+
+if [[ $1 == "--help" || -z $1 ]]; then
+    usage
+fi
+
+git add .
+if [[ $? -ne 0 ]]; then
+    echo "Error: git add failed."
+    exit 1
+fi
+
+git commit -S -m "$1"
+if [[ $? -ne 0 ]]; then
+    echo "Error: git commit failed."
+    exit 1
+fi
+
+git push origin main
+if [[ $? -ne 0 ]]; then
+    echo "Error: git push failed."
+    exit 1
+fi
+
