@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $1 == "--help" ]]; then
+    echo "Usage: gpull"
+    echo "Fetches from the remote repository and merges."
+    exit 0
+fi
+
+git pull
+if [[ $? -ne 0 ]]; then
+    echo "Error: git pull failed."
+    exit 1
+fi
+

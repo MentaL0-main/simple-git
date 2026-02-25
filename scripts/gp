@@ -1,14 +1,15 @@
 #!/bin/bash
 
 if [[ $1 == "--help" ]]; then
-    echo "Usage: gpull"
-    echo "Fetches from the remote repository and merges."
+    echo "Usage: gp"
+    echo "Runs git push origin main"
     exit 0
 fi
 
-git pull
+git push origin main
 if [[ $? -ne 0 ]]; then
-    echo "Error: git pull failed."
+    echo "Error: git push failed."
     exit 1
 fi
+
 
